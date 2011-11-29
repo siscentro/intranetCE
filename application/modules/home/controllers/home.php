@@ -12,5 +12,3 @@ class Home extends MY_Controller{
     Template::render();
   }
 }
-
-?>

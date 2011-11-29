@@ -588,7 +588,7 @@ class Template {
 		{
 			if (class_exists('CI_Session'))
 			{
-				self::$ci->session->set_flashdata('message', $type.'::'.$message);
+				self::$ci->session->set_flashdata('message', $type.'--'.$message);
 			}
 			
 			self::$message = array('type'=>$type, 'message'=>$message);
@@ -621,9 +621,11 @@ class Template {
 			if (!empty($message))
 			{
 				// Split out our message parts
-				$temp_message = explode('::', $message);
-				$type = $temp_message[0];
-				$message = $temp_message[1];
+				$temp_message = explode('--', $message);
+                                if(count($temp_message)>1){
+                                  $type = $temp_message[0];
+                                  $message = $temp_message[1];
+                                }
 				
 				unset($temp_message);
 			} 

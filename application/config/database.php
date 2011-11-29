@@ -42,8 +42,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'sistemas';
-$db['default']['password'] = 'ce535server';
+$db['default']['username'] = 'root';
+$db['default']['password'] = '';
 $db['default']['database'] = 'centro';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';

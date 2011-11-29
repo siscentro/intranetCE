@@ -9,7 +9,7 @@ class Auth extends MY_Controller{
   function index(){
     if ($message = $this->session->flashdata('message')) {
       //$this->load->view('auth/general_message', array('message' => $message));
-      Template::set_message($message, 'information');
+      Template::set_message($message);
       Template::render();
     } else {
       redirect('/auth/login/');

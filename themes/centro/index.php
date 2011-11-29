@@ -22,8 +22,8 @@ Released   : 20090523
   <div id="wrapper">
 	<div id="header">
 		<div id="logo">
-			<h1><a href="#">Communication</a></h1>
-			<p> Template design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a></p>
+			<h1><a href="#">Centro Electrico S.A.</a></h1>
+			<p> calidad para el hogar</p>
 		</div>
 	</div>
 	<!-- end #header -->

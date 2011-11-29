@@ -1,13 +1,7 @@
 /***************************
- * @VERSION 1.0
+ * @VERSION 2.0
  * 
  */
 
-base del codeigniter basico, con librerias frecuentes ya configuradas
-
-librerias
-	Ocular 3
-	Fpdf 1.6
-	tank_auth 2
-
-ya esta listo la autenticacion de los usuarios
+Intranet Centro Electrico
+Template activo -- centro
