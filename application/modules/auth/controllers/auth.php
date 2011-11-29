@@ -4,7 +4,11 @@ class Auth extends MY_Controller{
   function __construct(){
     parent::__construct();
     $this->lang->load('tank_auth');
-//    $this->config->load('tank_auth');
+    $data['Login'][]=array('link'=>'auth/forgot_password/', 'nombre'=>'Olvide la contraseña', 'clase'=>'botContra');
+    if ($this->config->item('allow_registration')){
+      $data['Login'][]=array('link'=>'auth/register/', 'nombre'=>'Registrarse', 'clase'=>'botReg');
+    };
+    Template::set('fastest',$data);
   }
   function index(){
     if ($message = $this->session->flashdata('message')) {

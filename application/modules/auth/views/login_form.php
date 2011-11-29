@@ -9,7 +9,7 @@ $login = array(
 if ($login_by_username AND $login_by_email) {
 	$login_label = 'Email o Nombre de Usuario';
 } else if ($login_by_username) {
-	$login_label = 'Login';
+	$login_label = 'Nombre de Usuario';
 } else {
 	$login_label = 'Email';
 }
@@ -84,8 +84,6 @@ $captcha = array(
 		<td colspan="3">
 			<?php echo form_checkbox($remember); ?>
 			<?php echo form_label('Recuerdame', $remember['id']); ?>
-			<?php echo anchor('/auth/forgot_password/', 'Olvide la contraseña'); ?>
-			<?php if ($this->config->item('allow_registration')) echo anchor('/auth/register/', 'Registrse'); ?>
 		</td>
 	</tr>
 </table>

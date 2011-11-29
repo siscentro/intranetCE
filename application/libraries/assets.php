@@ -418,7 +418,7 @@ class Assets {
 	public static function image($image=null, $extra_attrs=array()) 
 	{
 		if (empty($image)) return '';
-		$image .= $this->assets_folders['images'];
+		$image = $this->asset_base . $this->asset_folders['images'] . $image;
 		$attrs = array(
 			'src'	=> $image,
 			'alt'	=> isset($extra_attrs['alt']) ? $extra_attrs['alt'] : ''

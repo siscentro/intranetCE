@@ -2,17 +2,20 @@
     <ul>
       <li>
         <h2>Intranet Consumax</h2>
-        <p><?php echo Assets::image('cmx.bmp')?></p>
+        <p>
+          <a href="https://192.168.5.25" target="_blank">
+            <img src="<?php echo base_url() . '/assets/images/cmx.bmp';?>" width="200px" />
+          </a>
+        </p>
       </li>
       <?php if(isset($fastest)):?>
-      <?php foreach($fastest as $linea):?>
+      <?php foreach($fastest as $key=>$datos):?>
       <li>
-        <h2>Categories</h2>
+        <h2><?php echo $key?></h2>
         <ul>
-                <li><a href="#">Uncategorized</a> (3)<span>Lorem Ipsum Dolor Sit Amit</span></li>
-                <li><a href="#">Lorem Ipsum</a> (42)<span>Lorem Ipsum Dolor Sit Amit</span></li>
-                <li><a href="#">Urna Congue Rutrum</a> (28)<span>Lorem Ipsum Dolor Sit Amit</span> </li>
-                <li><a href="#">Vivamus Fermentum</a> (13)<span>Lorem Ipsum Dolor Sit Amit</span> </li>
+          <?php foreach($datos as $m):?>
+             <li><?php echo anchor($m['link'],$m['nombre'],'class="'.$m['clase'].'"')?></li>
+          <?php endforeach?>
         </ul>
       </li>
       <?php endforeach?>

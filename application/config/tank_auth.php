@@ -7,8 +7,8 @@
 | These details are used in emails sent by authentication library.
 |--------------------------------------------------------------------------
 */
-$config['website_name'] = 'Proyecto';
-$config['webmaster_email'] = 'daniel.bertoni@gmail.com';
+$config['website_name'] = 'Intranet Centro Electrico';
+$config['webmaster_email'] = 'sistemas@centroelectricosa.com.ar';
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +43,7 @@ $config['allow_registration'] = TRUE;
 $config['captcha_registration'] = FALSE;
 $config['email_activation'] = FALSE;
 $config['email_activation_expire'] = 60*60*24*2;
-$config['email_account_details'] = TRUE;
+$config['email_account_details'] = false;
 $config['use_username'] = TRUE;
 
 $config['username_min_length'] = 4;
@@ -69,7 +69,7 @@ $config['password_max_length'] = 20;
 |--------------------------------------------------------------------------
 */
 $config['login_by_username'] = TRUE;
-$config['login_by_email'] = TRUE;
+$config['login_by_email'] = false;
 $config['login_record_ip'] = TRUE;
 $config['login_record_time'] = TRUE;
 $config['login_count_attempts'] = TRUE;
