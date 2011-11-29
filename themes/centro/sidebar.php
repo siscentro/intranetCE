@@ -1,9 +1,11 @@
 <div id="sidebar">
     <ul>
       <li>
-        <h2>Aliquam tempus</h2>
-        <p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare consectetuer hendrerit.</p>
+        <h2>Intranet Consumax</h2>
+        <p><?php echo Assets::image('cmx.bmp')?></p>
       </li>
+      <?php if(isset($fastest)):?>
+      <?php foreach($fastest as $linea):?>
       <li>
         <h2>Categories</h2>
         <ul>
@@ -13,22 +15,8 @@
                 <li><a href="#">Vivamus Fermentum</a> (13)<span>Lorem Ipsum Dolor Sit Amit</span> </li>
         </ul>
       </li>
-      <li>
-          <h2>Blogroll</h2>
-          <ul>
-                  <li><a href="#">Phasellus Pellentesque</a><span>Lorem Ipsum Dolor Sit Amit</span> </li>
-                  <li><a href="#">Consectetuer Adipiscing</a><span>Lorem Ipsum Dolor Sit Amit</span> </li>
-                  <li><a href="#">Urna Congue Rutrum</a><span>Lorem Ipsum Dolor Sit Amit</span> </li>
-          </ul>
-      </li>
-      <li>
-          <h2>Archives</h2>
-          <ul>
-                  <li><a href="#">December 2009</a>&nbsp;(29)<span>Lorem Ipsum Dolor Sit Amit</span></li>
-                  <li><a href="#">November 2009</a>&nbsp;(30)<span>Lorem Ipsum Dolor Sit Amit</span></li>
-                  <li><a href="#">October 2009</a>&nbsp;(31)<span>Lorem Ipsum Dolor Sit Amit</span></li>
-          </ul>
-      </li>
+      <?php endforeach?>
+      <?php endif?>
     </ul>
 </div>
 

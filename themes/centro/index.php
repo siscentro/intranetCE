@@ -17,6 +17,7 @@ Released   : 20090523
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Centro Electrico S.A. - Intranet</title>
 <?php echo Assets::css()?>
+<?php echo Assets::js('jquery-1.5.min')?>
 </head>
 <body>
   <div id="wrapper">
