@@ -8,9 +8,10 @@ class MY_Controller extends MX_Controller {
     parent::__construct();
     $ipDebags=array('192.168.0.8');
     $this->output->enable_profiler(in_array($_SERVER['REMOTE_ADDR'],$ipDebags));
-    /*
-    if(!$this->tank_auth->is_logued_in()){
+    if($this->session->userdata('status')==STATUS_NOT_ACTIVATED){
       Template::redirect('auth/login');
-    };*/
+    };
+    $data['menu'] = $this->Modulos_model->getMenuUser($this->session->userdata('user_id'));
+    Template::set($data);
   }
 }

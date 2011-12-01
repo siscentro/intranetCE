@@ -41,6 +41,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
+/** DB de servidor central **/
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
 $db['default']['password'] = '';
@@ -56,6 +57,72 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+/** DB de Central IP 535 **/
+$db['db535']['hostname'] = '192.168.0.45';
+$db['db535']['username'] = 'sistemas';
+$db['db535']['password'] = 'ce535server';
+$db['db535']['database'] = 'asteriskcdrdb';
+$db['db535']['dbdriver'] = 'mysqli';
+$db['db553']['dbprefix'] = '';
+$db['db535']['pconnect'] = false;
+$db['db535']['db_debug'] = TRUE;
+$db['db535']['cache_on'] = FALSE;
+$db['db535']['cachedir'] = '';
+$db['db535']['char_set'] = 'utf8';
+$db['db535']['dbcollat'] = 'utf8_general_ci';
+$db['db535']['swap_pre'] = '';
+$db['db535']['autoinit'] = TRUE;
+$db['db535']['stricton'] = FALSE;
+
+$db['as535']['hostname'] = '192.168.0.45';
+$db['as535']['username'] = 'sistemas';
+$db['as535']['password'] = 'ce535server';
+$db['as535']['database'] = 'asterisk';
+$db['as535']['dbdriver'] = 'mysqli';
+$db['as553']['dbprefix'] = '';
+$db['as535']['pconnect'] = false;
+$db['as535']['db_debug'] = TRUE;
+$db['as535']['cache_on'] = FALSE;
+$db['as535']['cachedir'] = '';
+$db['as535']['char_set'] = 'utf8';
+$db['as535']['dbcollat'] = 'utf8_general_ci';
+$db['as535']['swap_pre'] = '';
+$db['as535']['autoinit'] = TRUE;
+$db['as535']['stricton'] = FALSE;
+
+/** DB de Central IP 780 **/
+$db['db780']['hostname'] = '192.168.0.46';
+$db['db780']['username'] = 'sistemas';
+$db['db780']['password'] = 'ce535server';
+$db['db780']['database'] = 'asteriskcdrdb';
+$db['db780']['dbdriver'] = 'mysqli';
+$db['db780']['dbprefix'] = '';
+$db['db780']['pconnect'] = false;
+$db['db780']['db_debug'] = TRUE;
+$db['db780']['cache_on'] = FALSE;
+$db['db780']['cachedir'] = '';
+$db['db780']['char_set'] = 'utf8';
+$db['db780']['dbcollat'] = 'utf8_general_ci';
+$db['db780']['swap_pre'] = '';
+$db['db780']['autoinit'] = TRUE;
+$db['db780']['stricton'] = FALSE;
+
+$db['as780']['hostname'] = '192.168.0.46';
+$db['as780']['username'] = 'sistemas';
+$db['as780']['password'] = 'ce535server';
+$db['as780']['database'] = 'asterisk';
+$db['as780']['dbdriver'] = 'mysqli';
+$db['as780']['dbprefix'] = '';
+$db['as780']['pconnect'] = false;
+$db['as780']['db_debug'] = TRUE;
+$db['as780']['cache_on'] = FALSE;
+$db['as780']['cachedir'] = '';
+$db['as780']['char_set'] = 'utf8';
+$db['as780']['dbcollat'] = 'utf8_general_ci';
+$db['as780']['swap_pre'] = '';
+$db['as780']['autoinit'] = TRUE;
+$db['as780']['stricton'] = FALSE;
 
 
 /* End of file database.php */

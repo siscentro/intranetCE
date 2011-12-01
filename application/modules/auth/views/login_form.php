@@ -81,11 +81,17 @@ $captcha = array(
 	} ?>
 
 	<tr>
-		<td colspan="3">
+		<td colspan="3" align="center">
 			<?php echo form_checkbox($remember); ?>
-			<?php echo form_label('Recuerdame', $remember['id']); ?>
+			<?php echo form_label('Continuar conectado', $remember['id']); ?>
 		</td>
 	</tr>
 </table>
 <?php echo form_submit('submit', 'Ingresar'); ?>
 <?php echo form_close(); ?>
+
+<script>
+$(document).ready(function(){
+  $('form').addClass('ui-widget');
+});
+</script>

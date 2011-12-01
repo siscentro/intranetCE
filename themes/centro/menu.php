@@ -1,11 +1,8 @@
 <div id="menu">
   <ul>
-    <li class="current_page_item"><a href="#">Home</a></li>
-    <li><a href="#">Blog</a></li>
-    <li><a href="#">Photos</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Links</a></li>
-    <li><a href="#">Contact</a></li>
+    <?php foreach($menu as $m):?>
+    <li <?php echo check_method($m->link)?> ><?php echo anchor($m->link,$m->nombre,$m->clase)?></li>
+    <?php endforeach;?>
   </ul>
 </div>
 

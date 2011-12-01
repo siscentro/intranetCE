@@ -182,7 +182,7 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 4;
 
 /*
 |--------------------------------------------------------------------------
@@ -193,7 +193,7 @@ $config['log_threshold'] = 0;
 | application/logs/ folder. Use a full server path with trailing slash.
 |
 */
-$config['log_path'] = '';
+$config['log_path'] = 'application/logs/';
 
 /*
 |--------------------------------------------------------------------------
@@ -226,7 +226,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'fullEncrptacion2011';
+$config['encryption_key'] = 'fullEncriptacion2011';
 
 /*
 |--------------------------------------------------------------------------
@@ -252,7 +252,7 @@ $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;
 $config['sess_use_database']	= TRUE;
 $config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
+$config['sess_match_ip']		= true;
 $config['sess_match_useragent']	= TRUE;
 $config['sess_time_to_update']	= 300;
 

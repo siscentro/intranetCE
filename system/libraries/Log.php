@@ -55,6 +55,7 @@ class CI_Log {
 		{
 			$this->_date_fmt = $config['log_date_format'];
 		}
+                date_default_timezone_set('America/Buenos_Aires');
 	}
 
 	// --------------------------------------------------------------------

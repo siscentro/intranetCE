@@ -1,6 +1,6 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-class Auth extends MY_Controller{
+class Auth extends MX_Controller{
   function __construct(){
     parent::__construct();
     $this->lang->load('tank_auth');
@@ -8,16 +8,20 @@ class Auth extends MY_Controller{
     if ($this->config->item('allow_registration')){
       $data['Login'][]=array('link'=>'auth/register/', 'nombre'=>'Registrarse', 'clase'=>'botReg');
     };
+    $dataM['menu'] = $this->Modulos_model->getMenuUser($this->session->userdata('user_id'));
+    Template::set($dataM);
     Template::set('fastest',$data);
   }
   function index(){
+    /*
     if ($message = $this->session->flashdata('message')) {
       //$this->load->view('auth/general_message', array('message' => $message));
       Template::set_message($message);
-      Template::render();
+      Template::redirect('home');
     } else {
       redirect('/auth/login/');
-    }
+    }*/
+    Template::redirect('home');
   }
   /**
    * Login user on the site
@@ -26,7 +30,7 @@ class Auth extends MY_Controller{
    */
   function login(){
     if ($this->tank_auth->is_logged_in()) {									// logged in
-        redirect('');
+        $this->index();
     }elseif($this->tank_auth->is_logged_in(FALSE)){						// logged in, not activated
             redirect('/auth/send_again/');
         }else{

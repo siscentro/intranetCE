@@ -17,12 +17,15 @@ Released   : 20090523
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Centro Electrico S.A. - Intranet</title>
 <?php echo Assets::css()?>
-<?php echo Assets::js('jquery-1.5.min')?>
+<?php echo Assets::css('jquery-ui-1.8.16.blitzer')?>
+<?php echo Assets::js('jquery-1.6.2.min')?>
+<?php echo Assets::js('jquery-ui-1.8.16.min')?>
 </head>
 <body>
   <div id="wrapper">
 	<div id="header">
 		<div id="logo">
+                  <img src="<?php echo base_url()."themes/centro/images/logoCE.jpg"?>" width="70px" height="70px" />
 			<h1><a href="#">Centro Electrico S.A.</a></h1>
 			<p> calidad para el hogar</p>
 		</div>
