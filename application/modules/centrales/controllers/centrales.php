@@ -31,8 +31,8 @@ class Centrales extends MY_Controller{
         $data['lineas']=$lineas;
         break;
       case 'TAV': //info sucursal tavella
-        $internos = $this->AsTAV_model->getInternos();
-        $lineas   = $this->AsTAV_model->getLineas();
+        $internos = $this->Astav_model->getInternos();
+        $lineas   = $this->Astav_model->getLineas();
         $data['internos']=$internos;
         $data['lineas']=$lineas;
         break;
