@@ -124,6 +124,38 @@ $db['as780']['swap_pre'] = '';
 $db['as780']['autoinit'] = TRUE;
 $db['as780']['stricton'] = FALSE;
 
+/** DB de Central IP TAV **/
+$db['dbTAV']['hostname'] = '192.168.0.44';
+$db['dbTAV']['username'] = 'sistemas';
+$db['dbTAV']['password'] = 'ce535server';
+$db['dbTAV']['database'] = 'asteriskcdrdb';
+$db['dbTAV']['dbdriver'] = 'mysqli';
+$db['dbTAV']['dbprefix'] = '';
+$db['dbTAV']['pconnect'] = false;
+$db['dbTAV']['db_debug'] = TRUE;
+$db['dbTAV']['cache_on'] = FALSE;
+$db['dbTAV']['cachedir'] = '';
+$db['dbTAV']['char_set'] = 'utf8';
+$db['dbTAV']['dbcollat'] = 'utf8_general_ci';
+$db['dbTAV']['swap_pre'] = '';
+$db['dbTAV']['autoinit'] = TRUE;
+$db['dbTAV']['stricton'] = FALSE;
+
+$db['asTAV']['hostname'] = '192.168.0.44';
+$db['asTAV']['username'] = 'sistemas';
+$db['asTAV']['password'] = 'ce535server';
+$db['asTAV']['database'] = 'asterisk';
+$db['asTAV']['dbdriver'] = 'mysqli';
+$db['asTAV']['dbprefix'] = '';
+$db['asTAV']['pconnect'] = false;
+$db['asTAV']['db_debug'] = TRUE;
+$db['asTAV']['cache_on'] = FALSE;
+$db['asTAV']['cachedir'] = '';
+$db['asTAV']['char_set'] = 'utf8';
+$db['asTAV']['dbcollat'] = 'utf8_general_ci';
+$db['asTAV']['swap_pre'] = '';
+$db['asTAV']['autoinit'] = TRUE;
+$db['asTAV']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */
