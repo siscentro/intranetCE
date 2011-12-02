@@ -32,7 +32,7 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach($lienas as $linea):?>
+        <?php foreach($lineas as $linea):?>
         <tr>
           <td>
             <?php echo $linea->name?>
@@ -46,3 +46,9 @@
     </table>
   </div>
 </div>
+
+<script>
+$(document).ready(function(){
+  $("#acord").accordion();
+});
+</script>
