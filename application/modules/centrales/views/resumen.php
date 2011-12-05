@@ -1,5 +1,5 @@
 <div id="acord">
-  <h3>Internos</h3>
+  <h3><a href="#">Internos</a></h3>
   <div>
     <table>
       <thead>
@@ -22,7 +22,7 @@
       </tbody>
     </table>
   </div>
-  <h3>Lineas</h3>
+  <h3><a href="#">Lineas</a></h3>
   <div>
     <table>
       <thead>

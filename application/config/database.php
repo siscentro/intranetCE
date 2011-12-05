@@ -157,5 +157,38 @@ $db['asTAV']['swap_pre'] = '';
 $db['asTAV']['autoinit'] = TRUE;
 $db['asTAV']['stricton'] = FALSE;
 
+/** DB de Central IP DPC **/
+$db['dbDPC']['hostname'] = '192.168.0.47';
+$db['dbDPC']['username'] = 'sistemas';
+$db['dbDPC']['password'] = 'ce535server';
+$db['dbDPC']['database'] = 'asteriskcdrdb';
+$db['dbDPC']['dbdriver'] = 'mysqli';
+$db['dbDPC']['dbprefix'] = '';
+$db['dbDPC']['pconnect'] = false;
+$db['dbDPC']['db_debug'] = TRUE;
+$db['dbDPC']['cache_on'] = FALSE;
+$db['dbDPC']['cachedir'] = '';
+$db['dbDPC']['char_set'] = 'utf8';
+$db['dbDPC']['dbcollat'] = 'utf8_general_ci';
+$db['dbDPC']['swap_pre'] = '';
+$db['dbDPC']['autoinit'] = TRUE;
+$db['dbDPC']['stricton'] = FALSE;
+
+$db['asDPC']['hostname'] = '192.168.0.47';
+$db['asDPC']['username'] = 'sistemas';
+$db['asDPC']['password'] = 'ce535server';
+$db['asDPC']['database'] = 'asterisk';
+$db['asDPC']['dbdriver'] = 'mysqli';
+$db['asDPC']['dbprefix'] = '';
+$db['asDPC']['pconnect'] = false;
+$db['asDPC']['db_debug'] = TRUE;
+$db['asDPC']['cache_on'] = FALSE;
+$db['asDPC']['cachedir'] = '';
+$db['asDPC']['char_set'] = 'utf8';
+$db['asDPC']['dbcollat'] = 'utf8_general_ci';
+$db['asDPC']['swap_pre'] = '';
+$db['asDPC']['autoinit'] = TRUE;
+$db['asDPC']['stricton'] = FALSE;
+
 /* End of file database.php */
 /* Location: ./application/config/database.php */
