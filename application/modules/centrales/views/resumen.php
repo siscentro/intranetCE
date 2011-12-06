@@ -6,6 +6,9 @@
         <tr>
           <th>Interno</th>
           <th>Nombre</th>
+          <th>Grupo</th>
+          <th>Nombre Grupo</th>
+          <th>Acciones</th>
         </tr>
       </thead>
       <tbody>
@@ -17,10 +20,21 @@
           <td>
             <?php echo $interno->name?>
           </td>
+          <td>
+            <?php echo $interno->grupo?>
+          </td>
+          <td>
+            <?php echo $interno->nombreGrupo?>
+          </td>
+          <td>
+              <?php echo anchor('centrales/verInterno/'.$interno->extension,'Detalles Interno', 'class="detInternos"')?>
+              <?php echo anchor('centrales/verGrupo/'.$interno->grupo,'Detalles Grupo', 'class="detGrupos"')?>
+          </td>
         </tr>
         <?php endforeach;?>
       </tbody>
     </table>
+    Internos sin Asignar a Grupo = <?php echo $sinAsignar?>
   </div>
   <h3><a href="#">Lineas</a></h3>
   <div>
@@ -50,5 +64,7 @@
 <script>
 $(document).ready(function(){
   $("#acord").accordion();
+  $(".detInternos").button({icons:{primary:'ui-icon-person'}, text:false})
+  $(".detGrupos").button({icons:{primary:'ui-icon-refresh'}, text:false})
 });
 </script>

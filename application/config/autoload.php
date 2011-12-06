@@ -116,7 +116,7 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('Modulos_model');
+$autoload['model'] = array('Modulos_model', 'centrales/As535_model');
 
 
 /* End of file autoload.php */
