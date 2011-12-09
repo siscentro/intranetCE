@@ -71,4 +71,13 @@ class MY_Modelasterisk extends CI_Model{
     }
     return $datos;
   }
+  function getNombreLinea($id){
+    $this->DB = $this->{$this->dbn};
+    $this->DB->select('trunkid');
+    $this->DB->select('name');
+    $this->DB->select('CONCAT(UPPER(tech),"/",channelid,"-1") as namecdr', false);
+    $this->DB->from('trunks');
+    $this->DB->where('trunkid',$id);
+    return $this->DB->get()->row();
+  }
 }

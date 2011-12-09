@@ -347,3 +347,27 @@ a:hover {
 #footer a {
 	color: #969696;
 }
+
+th{
+  color:#FFF;
+  background-color: #D01010;
+  font-weight: bold;
+}
+.callIn{
+  background-color: #81F79F;
+  color: #000;
+}
+.callOut{
+  background-color: #F6CEF5;
+  color: #000;
+}
+.phonein{
+  background: url(images/callInMicro.gif) no-repeat;
+  width: 25px;
+  height: 25px;
+}
+.phoneout{
+  background: url(images/callOutMicro.gif) no-repeat;
+  width: 25px;
+  height: 25px;
+}

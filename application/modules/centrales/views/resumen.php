@@ -27,8 +27,8 @@
             <?php echo $interno->nombreGrupo?>
           </td>
           <td>
-              <?php echo anchor('centrales/verInterno/'.$interno->extension,'Detalles Interno', 'class="detInternos"')?>
-              <?php echo anchor('centrales/verGrupo/'.$interno->grupo,'Detalles Grupo', 'class="detGrupos"')?>
+              <?php echo anchor('centrales/verInterno/'.$interno->extension."/".$suc,'Detalles Interno', 'class="detInternos"')?>
+              <?php echo anchor('centrales/verGrupo/'.$interno->grupo."/".$suc,'Detalles Grupo', 'class="detGrupos"')?>
           </td>
         </tr>
         <?php endforeach;?>
@@ -54,6 +54,9 @@
           <td>
             <?php echo $linea->tech?>
           </td>
+          <td>
+              <?php echo anchor('centrales/verLinea/'.$linea->trunkid."/".$suc,'Detalles Linea', 'class="detLineas"')?>
+          </td>
         </tr>
         <?php endforeach;?>
       </tbody>
@@ -66,5 +69,6 @@ $(document).ready(function(){
   $("#acord").accordion();
   $(".detInternos").button({icons:{primary:'ui-icon-person'}, text:false})
   $(".detGrupos").button({icons:{primary:'ui-icon-refresh'}, text:false})
+  $(".detLineas").button({icons:{primary:'ui-icon-circle-arrow-e'}, text:false})
 });
 </script>

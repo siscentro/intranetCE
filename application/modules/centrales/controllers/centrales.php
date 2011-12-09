@@ -7,19 +7,16 @@
 class Centrales extends MY_Controller{
   function __construct() {
     parent::__construct();
-    //$this->load->model('Central_model');
   }
   function index(){
     Template::render();
   }
   function resumen($suc=0){
-    $gruposCC = array('603','605','606','607','608','609','610');
-    $grupos535 = array('601','602','604');
     switch ($suc) {
       case 'cc': //info casa central
         $this->load->model('As535_model');
-        $internosCC  = $this->As535_model->getInternos(false,$gruposCC);
-        $internos535 = $this->As535_model->getInternos(false,$grupos535);
+        $internosCC  = $this->As535_model->getInternosCentral(false);
+        $internos535 = $this->As535_model->getInternos535(false);
         $data['sinAsignar']=count($this->As535_model->getInternos(true))-(count($internosCC)+count($internos535));
         $lineas   = $this->As535_model->getLineas();
         $data['internos']=$internosCC;
@@ -27,8 +24,8 @@ class Centrales extends MY_Controller{
         break;
       case '535': //info sucursal 535
         $this->load->model('As535_model');
-        $internosCC  = $this->As535_model->getInternos(false,$gruposCC);
-        $internos535 = $this->As535_model->getInternos(false,$grupos535);
+        $internosCC  = $this->As535_model->getInternosCentral(false);
+        $internos535 = $this->As535_model->getInternos535(false);
         $data['sinAsignar']=count($this->As535_model->getInternos(true))-(count($internosCC)+count($internos535));
         $lineas   = $this->As535_model->getLineas();
         $data['internos']=$internos535;
@@ -59,6 +56,81 @@ class Centrales extends MY_Controller{
         $data['sinAsignar']=count($this->Asdpc_model->getInternos(true))-(count($internos));
         break;
     }
+    $data['suc']=$suc;
+    Template::set($data);
+    Template::render();
+  }
+  function verLinea($trunk_id,$suc){
+    $limite=20;
+    switch ($suc) {
+      case 'cc': //info casa central
+        $modelo="Cdr535_model";
+        $modeloAs="As535_model";
+        break;
+      case '535': //info sucursal 535
+        $modelo="Cdr535_model";
+        $modeloAs="As535_model";
+        break;
+      case '780': //info sucursal 780
+        $modelo="Cdr780_model";
+        $modeloAs="As780_model";
+        break;
+      case 'TAV': //info sucursal tavella
+        $modelo="Cdrtav_model";
+        $modeloAs="Astav_model";
+        break;
+      case 'DPC': //info Deposito Central
+        $modelo="Cdrdpc_model";
+        $modeloAs="Asdpc_model";
+        break;
+    }
+    $fechoy = new DateTime();
+    $fecini = ($this->input->post('fecini'))?$this->input->post('fecini'):$fechoy->format('Y-m-d');
+    $fechas = ($this->input->post('fechas'))?$this->input->post('fechas'):$fechoy->format('Y-m-d');
+    $tipo   = ($this->input->post('tipo'))?$this->input->post('tipo'):0;
+    $this->load->model($modelo);
+    $this->load->model($modeloAs);
+    $linea =  $this->{$modeloAs}->getNombreLinea($trunk_id);
+    $data['linea'] = $linea;
+    $data['suc']             = $suc;
+    $data['tiempo']          = new DateTime();
+    $data['fecha']           = new DateTime();
+    $data['llamadas'] = $this->{$modelo}->getLLamadasXLinea($linea->namecdr,$tipo,$fecini,$fechas);
+    //$realizadasTot = $this->{$modelo}->getTotalLlamadasRea($linea->namecdr);
+    Template::set($data);
+    Template::render();
+  }
+  function verInterno($interno,$suc){
+    $limite=20;
+    switch ($suc) {
+      case 'cc': //info casa central
+        $modelo="Cdr535_model";
+        break;
+      case '535': //info sucursal 535
+        $modelo="Cdr535_model";
+        break;
+      case '780': //info sucursal 780
+        $modelo="Cdr780_model";
+        break;
+      case 'TAV': //info sucursal tavella
+        $modelo="Cdrtav_model";
+        break;
+      case 'DPC': //info Deposito Central
+        $modelo="Cdrdpc_model";
+        break;
+    }
+    $this->load->model($modelo);
+    $llamadas      = $this->{$modelo}->getUltimasLlamadas($interno,$limite);
+    $recibidas     = $this->{$modelo}->getUltimasLlamadasRecibidas($interno,$limite);
+    $realizadas    = $this->{$modelo}->getUltimasLlamadasRealizadas($interno,$limite);
+    $realizadasTot = $this->{$modelo}->getTotalLlamadasRea($interno);
+    $data['interno']         = $interno;
+    $data['llamadas']        = array_merge($recibidas, $realizadas);
+    $data['llamadas']        = $llamadas;
+    $data['totalRealizadas'] = $realizadasTot;
+    $data['suc']             = $suc;
+    $data['tiempo']          = new DateTime();
+    $data['fecha']           = new DateTime();
     Template::set($data);
     Template::render();
   }
