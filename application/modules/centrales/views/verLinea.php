@@ -8,6 +8,7 @@
   <?php echo form_close()?>
 </div>
 <br />
+<?php echo Template::block('grafico');?>
 <table width="95%">
   <thead>
     <tr>

@@ -156,14 +156,14 @@ class MY_Model extends CI_Model{
    * @return DB_Res $query CodeIgniter's db resource
    */
   public function getById($id) {
-	  if(!is_numeric($id)) {
-			  log_message('error', 'Got not numeric id: '.$id);
-			  return FALSE;
-	  } else {
-		  $this->db->from($this->getTable());
-		  $this->db->where($this->getPrimaryKey(), $id);
-		  return $this->db->get()->row();
-	  }
+    if(!is_numeric($id)) {
+        log_message('error', 'Got not numeric id: '.$id);
+        return FALSE;
+    } else {
+        $this->db->from($this->getTable());
+        $this->db->where($this->getPrimaryKey(), $id);
+        return $this->db->get()->row();
+    }
   }
 
   /**
@@ -207,10 +207,13 @@ class MY_Model extends CI_Model{
           }
           return $datos;
   }
-  public function getAll($orden=FALSE, $limite=false){
+  public function getAll($orden=array(), $limite=false){
     $this->db->from($this->getTable());
-    if($orden)
-	  $this->db->order_by($orden);
+    if(is_array($orden)){
+      foreach($orden as $o){
+        $this->db->order_by($o[0],$o[1]);
+      };
+    }
     if($limite){
       $this->db->limit($limite);
     };

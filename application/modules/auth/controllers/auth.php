@@ -13,15 +13,14 @@ class Auth extends MX_Controller{
     Template::set('fastest',$data);
   }
   function index(){
-    /*
-    if ($message = $this->session->flashdata('message')) {
+    if ($this->tank_auth->is_logged_in()) {
       //$this->load->view('auth/general_message', array('message' => $message));
-      Template::set_message($message);
+      Template::set_message($this->session->flashdata('message'),'ok');
       Template::redirect('home');
     } else {
       redirect('/auth/login/');
-    }*/
-    Template::redirect('home');
+    }
+    //Template::redirect('home');
   }
   /**
    * Login user on the site
@@ -30,7 +29,7 @@ class Auth extends MX_Controller{
    */
   function login(){
     if ($this->tank_auth->is_logged_in()) {									// logged in
-        $this->index();
+      $this->index();
     }elseif($this->tank_auth->is_logged_in(FALSE)){						// logged in, not activated
             redirect('/auth/send_again/');
         }else{
@@ -118,7 +117,8 @@ class Auth extends MX_Controller{
           } else {
                   $use_username = $this->config->item('use_username');
                   if ($use_username) {
-                          $this->form_validation->set_rules('username', 'Usuario', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length').']|max_length['.$this->config->item('username_max_length').']|alpha_dash');
+                          //$this->form_validation->set_rules('username', 'Usuario', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length').']|max_length['.$this->config->item('username_max_length').']|alpha_dash');
+                          $this->form_validation->set_rules('username', 'Usuario', 'trim|required|xss_clean|min_length['.$this->config->item('username_min_length').']|max_length['.$this->config->item('username_max_length').']');
                   }
                   $this->form_validation->set_rules('email', 'E-mail', 'trim|required|xss_clean|valid_email');
                   $this->form_validation->set_rules('password', 'Contraseña', 'trim|required|xss_clean|min_length['.$this->config->item('password_min_length').']|max_length['.$this->config->item('password_max_length').']|alpha_dash');

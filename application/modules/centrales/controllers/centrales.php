@@ -7,6 +7,12 @@
 class Centrales extends MY_Controller{
   function __construct() {
     parent::__construct();
+    $data['Imprimir'][]=array('link'=>'centrales/pdf/listinInternos/cc', 'nombre'=>'Listado Internos Central', 'clase'=>'botPrint');
+    $data['Imprimir'][]=array('link'=>'centrales/pdf/listinInternos/535', 'nombre'=>'Listado Internos Suc 535', 'clase'=>'botPrint');
+    $data['Imprimir'][]=array('link'=>'centrales/pdf/listinInternos/780', 'nombre'=>'Listado Internos Suc 780', 'clase'=>'botPrint');
+    $data['Imprimir'][]=array('link'=>'centrales/pdf/listinInternos/TAV', 'nombre'=>'Listado Internos Suc TAV', 'clase'=>'botPrint');
+    $data['Imprimir'][]=array('link'=>'centrales/pdf/listinInternos/DPC', 'nombre'=>'Listado Internos DPC', 'clase'=>'botPrint');
+    Template::set('fastest',$data);
   }
   function index(){
     Template::render();
@@ -96,7 +102,13 @@ class Centrales extends MY_Controller{
     $data['tiempo']          = new DateTime();
     $data['fecha']           = new DateTime();
     $data['llamadas'] = $this->{$modelo}->getLLamadasXLinea($linea->namecdr,$tipo,$fecini,$fechas);
+    Template::set_block('grafico', 'centrales/grafico');
+    $data['php_chart'] = '/var/www/betas/intranet'.'/assets/php-ofc-library/open_flash_chart_object.php';
+    $data['pageDatos'] =  'chart.php';
     //$realizadasTot = $this->{$modelo}->getTotalLlamadasRea($linea->namecdr);
+    /*
+     * graficos
+     */
     Template::set($data);
     Template::render();
   }

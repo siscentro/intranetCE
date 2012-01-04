@@ -582,8 +582,7 @@ class Template {
 		Return:
 			void
 	 */
-	public static function set_message($message='', $type='info') 
-	{
+	public static function set_message($message='', $type='info'){
 		if (!empty($message))
 		{
 			if (class_exists('CI_Session'))

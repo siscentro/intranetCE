@@ -26,7 +26,7 @@ Released   : 20090523
 	<div id="header">
 		<div id="logo">
                   <img src="<?php echo base_url()."themes/centro/images/logoCE.jpg"?>" width="70px" height="70px" />
-			<h1><a href="#">Centro Electrico S.A.</a></h1>
+			<h1><a href="<?php echo base_url()?>">Centro Electrico S.A.</a></h1>
 			<p> calidad para el hogar</p>
 		</div>
 	</div>

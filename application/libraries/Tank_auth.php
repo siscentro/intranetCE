@@ -489,8 +489,7 @@ class Tank_auth{
 	 *
 	 * @return	string
 	 */
-	function get_error_message()
-	{
+	function get_error_message(){
 		return $this->error;
 	}
 

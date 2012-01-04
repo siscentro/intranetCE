@@ -11,7 +11,6 @@ class Home extends MY_Controller{
   function index(){
     Template::render();
   }
-
   function todos(){
     $this->load->model('Central535_model');
     $data['datos'] = $this->Central535_model->getAll();
