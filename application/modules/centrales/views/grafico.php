@@ -1,6 +1,6 @@
 <?php
-include(base_url()."/assets/FusionCharts.php");
 
+include_once($path."assets/FusionCharts.php");
 
 
 	//This page demonstrates the ease of generating charts using FusionCharts.
@@ -11,4 +11,4 @@ include(base_url()."/assets/FusionCharts.php");
 
 
 	//Create the chart - Column 3D Chart with data from Data/Data.xml
-	echo renderChartHTML(base_url()."assets/FussionCharts/FCF_Column3D.swf", base_url()."/assets/Data/Data.xml", "", "myFirst", 600, 300);
+	echo renderChartHTML("assets/FussionCharts/FCF_Column3D.swf", $path."assets/Data/Data.xml", "", "myFirst", 600, 300);
